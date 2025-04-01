@@ -3,35 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Önerler Yedek Parça</title>
+    <title>Yedek Parça Mağazası</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            margin: 0;
-            padding: 0;
         }
         .container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            padding: 10px;
         }
-        .brand {
+        .product, .brand {
             margin: 10px;
             padding: 10px;
             border: 1px solid #ddd;
             border-radius: 5px;
-            width: 100%;
-            max-width: 220px;
+            width: 220px;
             text-align: center;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
         }
         img {
-            width: 100%;
-            height: auto;
-            max-width: 200px;
-            object-fit: contain;
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
         }
         .buttons {
             margin-top: 10px;
@@ -44,31 +38,17 @@
             color: white;
             text-decoration: none;
             border-radius: 5px;
-            font-size: 14px;
-        }
-        .call {
-            background-color: #007BFF;
-        }
-        @media (max-width: 600px) {
-            .brand {
-                width: 90%;
-            }
-            a {
-                font-size: 12px;
-                padding: 8px;
-            }
         }
     </style>
 </head>
 <body>
-    <h1>Cıkma Parça </h1>
+    <h1>Yedek Parça Mağazası</h1>
     
     <script>
         var phoneNumber = "+905367144945";
-        phoneNumber = "+905367144945".replace("+905367144945", "+905367144945");
     </script>
     
-    <h2>Hangi Markayı Arıyorsunuz</h2>
+    <h2>Araba Markaları</h2>
     <div class="container">
         <script>
             const brands = [
@@ -105,8 +85,7 @@
                         <img src="${brand.url}" alt="${brand.name}">
                         <h3>${brand.name}</h3>
                         <div class="buttons">
-                            <a href="https://wa.me/${phoneNumber}?text=${brand.name}+yedek+parça+siparişi" target="_blank">WhatsApp ile Sipariş Ver</a>
-                            <a href="tel:${phoneNumber}" class="call">Ara</a>
+                            <a href="https://wa.me/+905367144945?text=${brand.name}+yedek+parça+siparişi" target="_blank">WhatsApp ile Sipariş Ver</a>
                         </div>
                     </div>
                 `);
