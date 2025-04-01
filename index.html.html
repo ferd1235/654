@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yedek Parça Mağazası</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .product, .brand {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 220px;
+            text-align: center;
+        }
+        img {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+        }
+        .buttons {
+            margin-top: 10px;
+        }
+        a {
+            display: block;
+            margin: 5px 0;
+            padding: 10px;
+            background-color: #25D366;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .call {
+            background-color: #007BFF;
+        }
+    </style>
+</head>
+<body>
+    <h1>Yedek Parça Mağazası</h1>
+    
+    <script>
+        var phoneNumber = "+905382675593";
+    </script>
+    
+    <h2>Araba Markaları</h2>
+    <div class="container">
+        <script>
+            const brands = [
+                { name: "BMW", url: "https://logo.clearbit.com/bmw.com" },
+                { name: "Mercedes", url: "https://logo.clearbit.com/mercedes-benz.com" },
+                { name: "Audi", url: "https://logo.clearbit.com/audi.com" },
+                { name: "Volkswagen", url: "https://logo.clearbit.com/volkswagen.com" },
+                { name: "Toyota", url: "https://logo.clearbit.com/toyota.com" },
+                { name: "Honda", url: "https://logo.clearbit.com/honda.com" },
+                { name: "Ford", url: "https://logo.clearbit.com/ford.com" },
+                { name: "Nissan", url: "https://logo.clearbit.com/nissan-global.com" },
+                { name: "Hyundai", url: "https://logo.clearbit.com/hyundai.com" },
+                { name: "Peugeot", url: "https://logo.clearbit.com/peugeot.com" },
+                { name: "Renault", url: "https://logo.clearbit.com/renault.com" },
+                { name: "Citroën", url: "https://logo.clearbit.com/citroen.com" },
+                { name: "Mitsubishi", url: "https://logo.clearbit.com/mitsubishi-motors.com" },
+                { name: "Mazda", url: "https://logo.clearbit.com/mazda.com" },
+                { name: "Suzuki", url: "https://logo.clearbit.com/suzuki.com" },
+                { name: "Chevrolet", url: "https://logo.clearbit.com/chevrolet.com" },
+                { name: "Kia", url: "https://logo.clearbit.com/kia.com" },
+                { name: "Subaru", url: "https://logo.clearbit.com/subaru.com" },
+                { name: "Volvo", url: "https://logo.clearbit.com/volvo.com" },
+                { name: "Dacia", url: "https://logo.clearbit.com/dacia.com" },
+                { name: "Alfa Romeo", url: "https://logo.clearbit.com/alfa-romeo.com" },
+                { name: "Jaguar", url: "https://logo.clearbit.com/jaguar.com" },
+                { name: "Tesla", url: "https://logo.clearbit.com/tesla.com" },
+                { name: "Jeep", url: "https://logo.clearbit.com/jeep.com" },
+                { name: "Fiat", url: "https://logo.clearbit.com/fiat.com" }
+            ];
+
+            brands.forEach(brand => {
+                document.write(`
+                    <div class="brand">
+                        <img src="${brand.url}" alt="${brand.name}">
+                        <h3>${brand.name}</h3>
+                        <div class="buttons">
+                            <a href="https://wa.me/+905382675593?text=${brand.name}+yedek+parça+siparişi" target="_blank">WhatsApp ile Sipariş Ver</a>
+                            <a href="tel:+905382675593" class="call">Ara</a>
+                        </div>
+                    </div>
+                `);
+            });
+        </script>
+    </div>
+</body>
+</html>
