@@ -30,13 +30,20 @@
         .buttons {
             margin-top: 10px;
         }
-        a {
+        .call-button {
             display: block;
             margin: 5px 0;
             padding: 10px;
-            background-color: #25D366;
+            background-color: #007bff;
             color: white;
             text-decoration: none;
+            border-radius: 5px;
+        }
+        #searchBox {
+            margin-bottom: 20px;
+            padding: 10px;
+            width: 300px;
+            border: 1px solid #ddd;
             border-radius: 5px;
         }
     </style>
@@ -44,12 +51,14 @@
 <body>
     <h1>Yedek Parça Mağazası</h1>
     
+    <input type="text" id="searchBox" placeholder="Marka Ara..." onkeyup="searchBrands()">
+    
     <script>
-        var phoneNumber = "+905367144945";
+        var phoneNumber = "05074889611";
     </script>
     
     <h2>Araba Markaları</h2>
-    <div class="container">
+    <div class="container" id="brandsContainer">
         <script>
             const brands = [
                 { name: "BMW", url: "https://logo.clearbit.com/bmw.com" },
@@ -79,17 +88,40 @@
                 { name: "Fiat", url: "https://logo.clearbit.com/fiat.com" }
             ];
 
-            brands.forEach(brand => {
-                document.write(`
-                    <div class="brand">
-                        <img src="${brand.url}" alt="${brand.name}">
-                        <h3>${brand.name}</h3>
-                        <div class="buttons">
-                            <a href="https://wa.me/+905367144945?text=${brand.name}+yedek+parça+siparişi" target="_blank">WhatsApp ile Sipariş Ver</a>
+            function displayBrands() {
+                const container = document.getElementById("brandsContainer");
+                container.innerHTML = "";
+                brands.forEach(brand => {
+                    container.innerHTML += `
+                        <div class="brand">
+                            <img src="${brand.url}" alt="${brand.name}">
+                            <h3>${brand.name}</h3>
+                            <div class="buttons">
+                                <a href="tel:05074889611" class="call-button">Telefon ile Ara</a>
+                            </div>
                         </div>
-                    </div>
-                `);
-            });
+                    `;
+                });
+            }
+
+            function searchBrands() {
+                const query = document.getElementById("searchBox").value.toLowerCase();
+                const container = document.getElementById("brandsContainer");
+                container.innerHTML = "";
+                brands.filter(brand => brand.name.toLowerCase().includes(query)).forEach(brand => {
+                    container.innerHTML += `
+                        <div class="brand">
+                            <img src="${brand.url}" alt="${brand.name}">
+                            <h3>${brand.name}</h3>
+                            <div class="buttons">
+                                <a href="tel:05074889611" class="call-button">Telefon ile Ara</a>
+                            </div>
+                        </div>
+                    `;
+                });
+            }
+
+            displayBrands();
         </script>
     </div>
 </body>
